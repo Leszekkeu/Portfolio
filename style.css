@@ -472,6 +472,7 @@ span + span {
     background:#444
 }
 .menu-logo{
+    height: 32px;
     position: relative;
     top: 7px;
     margin-right: 5px;
