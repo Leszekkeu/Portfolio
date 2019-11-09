@@ -252,7 +252,17 @@ span + span {
     background-image: linear-gradient(147deg, #FFE53B 0%, #FF2525 74%);    
     border-radius: 30% 70% 59% 41% / 30% 30% 70% 70%;
     box-shadow: -10vmin 10vmin 0 rgba(255, 255, 255, 0.07);
-    animation: scale 0.6s ease-in-out, morph 3s linear infinite alternate;
+    animation: scale 0.8s ease-in-out, morph 3s linear infinite alternate;
+}
+.animated-border-in span{
+    font-weight: bold;
+    background: none;
+    color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 0;
+    left: 10px;
 }
 @keyframes morph {
     0% {border-radius: 30% 70% 59% 41% / 30% 30% 70% 70%;}
@@ -260,7 +270,7 @@ span + span {
 }
 @keyframes scale{
     from{
-        transform: scale(0);
+        transform: scale(0.3);
     }
     to{
         transform: scale(1);
@@ -271,6 +281,13 @@ span + span {
         width: 444px;
         height: 444px;
     }
+    .animated-border-in span{
+        top: 10px;
+        left: 20px;
+    }
+    .logo-a-img{
+        height: 400px;
+    }
 }
 @media only screen and (max-width:1300px){
     .animated-border-in{
@@ -279,6 +296,13 @@ span + span {
     }
     .animated-border{
         right: 100px;
+    }
+    .animated-border-in span{
+        top: 10px;
+        left: 20px;
+    }
+    .logo-a-img{
+        height: 300px;
     }
 }
 .animated-border-mobile{
@@ -289,7 +313,7 @@ span + span {
     z-index: -5;
 }
 .animated-border-mobile-in{
-    width: 230px;
+    width: 250px;
     height: 130px;
     background-image: linear-gradient( 135deg, #FD6E6A 10%, #FFC600 100%);
     border-radius: 0% 46% 100% 0% / 100% 0% 100% 0%;
@@ -321,7 +345,7 @@ span + span {
 }
 @media only screen and (max-width:500px){
     .animated-border-mobile-in{
-        width: 190px;
+        width: 230px;
         height: 110px;
     }
 }
@@ -357,13 +381,15 @@ span + span {
     flex-wrap: wrap;
 }
 .skill{
+    color: #fff;
     padding: 10px;
     text-align: center;
     border-radius: 100px;
     font-size: 20px;
     margin: 5px 10px;
     width: 100px;
-    background-color: #baf2bb;
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B, #FF2525 90%);   
     padding-bottom: 25px;
 }
 .projects-box{
@@ -371,8 +397,12 @@ span + span {
     flex-wrap: wrap;
     justify-content: space-between;
 }
+.contact-box a{
+    width: 400px;
+}
 .box{
-    background-color: rgb(84, 242, 195);
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B, #FF2525 90%);  
     width: 400px;
     height: 200px;
     padding: 10px;
@@ -383,6 +413,7 @@ span + span {
     box-shadow: 1px 1px 5px 0px rgb(246, 245, 248);
     transition: 0.3s;
     margin: 20px;
+    color: #fff;
 }
 .box:hover{
     -webkit-box-shadow: 3px 3px 5px 0px rgb(246, 245, 248);
@@ -403,7 +434,8 @@ span + span {
     }
 }
 .contact-option{
-    background-color: rgb(84, 242, 195);
+    background-color: #FFE53B;
+    background-image: linear-gradient(147deg, #FFE53B, #FF2525 90%);  
     width: 200;
     height: 200px;
     padding: 10px;
@@ -414,6 +446,7 @@ span + span {
     transition: 0.3s;
     margin: 20px;
     text-align: center;
+    color: #fff;
 }
 .contact-option:hover{
     border-radius: 10px;
@@ -422,6 +455,7 @@ span + span {
     height: 35px;
     position: relative;
     top: 4px;
+    color: #fff;
 }
 ::-webkit-scrollbar{
     width:10px
@@ -436,4 +470,9 @@ span + span {
 }
 ::-webkit-scrollbar-thumb:hover{
     background:#444
+}
+.menu-logo{
+    position: relative;
+    top: 7px;
+    margin-right: 5px;
 }
