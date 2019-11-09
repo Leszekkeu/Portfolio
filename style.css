@@ -55,8 +55,9 @@ button{
 }
 @media only screen and (max-width:420px){
     button{
-        width: 120px;
-        margin: 5% 5px 0 5% !important;
+        width: 125px;
+        margin: 4% 3px 0 4% !important;
+        padding: 5px 10px !important;
     }
 }
 button::after{
@@ -421,4 +422,18 @@ span + span {
     height: 35px;
     position: relative;
     top: 4px;
+}
+::-webkit-scrollbar{
+    width:10px
+}
+::-webkit-scrollbar-track{
+    background:#c1c1c1
+}
+::-webkit-scrollbar-thumb{
+    background:#666;
+    transition:.2s;
+    border-radius:5px
+}
+::-webkit-scrollbar-thumb:hover{
+    background:#444
 }

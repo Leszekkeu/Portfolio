@@ -1,5 +1,6 @@
 $(function(){
     var currentPage;
+    hashChange();
     $(".btn").on('click', function() {
         $(this).toggleClass('active');
         $(this).toggleClass('not-active');
@@ -40,7 +41,6 @@ $(function(){
         }
         currentPage = "home";
     })
-
     function showPage(cPage, toPage){
         if(cPage == null){
             cPage = "home";
@@ -57,12 +57,38 @@ $(function(){
         $(`.${cPage}`).addClass('pthide');
         $(`.${cPage}`).delay(200).fadeOut('fast');
 
-        $(`.${toPage}`).delay(370).addClass('ptshow');
+        $(`.${toPage}`).delay(400).addClass('ptshow');
         $(`.${toPage}`).fadeIn('fast');
         setTimeout(function() {
             $(`.${cPage}`).removeClass('pthide');
             $(`.${toPage}`).removeClass('ptshow');
         }, 700);
     
+    }
+    $( window ).on( 'hashchange', function( e ) {
+        hashChange();
+    } );
+    function hashChange(){
+        var hash = location.hash;
+        if(hash === "#skills"){
+            showPage(currentPage, 'skills')
+            currentPage = "skills";
+        }else if(hash === "#projects"){
+            showPage(currentPage, 'projects')
+            currentPage = "projects";
+        }else if(hash === "#contact"){
+            showPage(currentPage, 'contact')
+            currentPage = "contact";
+        }else if(hash === ""){
+            showPage(currentPage, 'home');
+            if($(window).width() < 1100){
+                $(".animated-border-mobile").fadeIn();
+                $(".abm2").fadeIn('fast');
+                $(".menu-title a").css('color', "#fff");
+            }else{
+                $(".animated-border").fadeIn('slow');
+            }
+            currentPage = "home";
+        }
     }
 })
