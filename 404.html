@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Leszekk.eu</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link href="style.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:500,700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script defer src="app.js"></script>
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Leszekk.eu">
+        <meta property="og:description" content="Hello, I am Leszek Korzan and Front-End Development is my passion.">
+        <meta property="og:image" content="img/fav/android-chrome-192x192">
+        <meta property="og:url" content="https://leszekk.eu">
+        <meta name="description" content="Hello, I am Leszek Korzan and Front-End Development is my passion." />
+        <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+        <link rel="manifest" href="img/fav/site.webmanifest">
+        <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        <style>
+            .center{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .text label{
+                font-size: 70px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            label span{
+                position: relative;
+                color: #000;
+                z-index: 2;
+                border: none;
+                background: none;
+                filter: blur(0.3px);
+            }
+            .text label::before,
+            .text label::after{
+                position: absolute;
+                content: attr(data-content);
+                top: 0;
+                left: 0;
+                visibility: hidden;
+            }
+            .text label::before,
+            .text label::after{
+                visibility: visible;
+            }
+            .text label::before{
+                color: rgba(255,0,188,.8);
+                animation: glitch .3s cubic-bezier(.25,.46,.45,.94) both infinite;
+            }
+            .text label::after{
+                color: rgba(0,255,255,.8);
+                animation: glitch .3s cubic-bezier(.25,.46,.45,.94) reverse both infinite;
+            }
+            @keyframes glitch {
+                0%{
+                    transform: translate(0);
+                }
+                20%{
+                    transform: translate(-2px, 2px);
+                }
+                40%{
+                    transform: translate(-2px, -2px);
+                }
+                60%{
+                    transform: translate(2px, 2px);
+                }
+                80%{
+                    transform: translate(2px, -2px);
+                }
+                100%{
+                    transform: translate(0);
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="animated-border-mobile"><div class="animated-border-mobile-in"></div></div>
+            <div class="abm2"><div class="animated-border-mobile-in abm2in"></div></div>
+            <div class="menu">
+                <div class="menu-title"><a href="https://leszekk.eu/"><img alt="Logo" class="menu-logo" src="img/fav/android-chrome-192x192.png">LESZEKK.eu</a></div>
+                <div class="btn not-active">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="menu-nav">
+                    <div class="menu-el showskills"><a href="https://leszekk.eu/#skills">Skills</a></div>
+                    <div class="menu-el showprojects"><a href="https://leszekk.eu/#projects">My Projects</a></div>
+                    <div class="menu-el showcontact"><a href="https://leszekk.eu/#contact">Contact Me</a></div>
+                </div>
+            </div>
+            <div class="cnt">
+                <div class="center text">
+                    <label data-content="404"><span>404</span></label>
+                </div>
+            </div>
+        </div>
+    </body> 
+</html>
