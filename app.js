@@ -16,7 +16,7 @@ $(function(){
         }
     })
     $(".github-link").click(function(){
-        window.open("https://github.com/Leszekkeu", '_blank');
+        window.open("https://github.com/leszekkorzan", '_blank');
     })
     $(".showskills").click(function(){
         showPage(currentPage, 'skills')
