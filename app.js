@@ -1,5 +1,22 @@
 $(function(){
-    var currentPage;
+    let currentPage;
+    let hashChange = () =>{
+        let _hash = location.hash;
+        if (_hash) {
+            let page = _hash.replace('#', '')
+            showPage(currentPage, page)
+            currentPage = page
+        } else {
+            showPage(currentPage, 'home');
+            if (window.innerWidth < 1100) {
+                $(".animated-border-mobile").fadeIn();
+                $(".abm2").fadeIn('fast');
+                $(".menu-title a").css('color', "#fff");
+            } else {
+                $(".animated-border").fadeIn('slow');
+            }
+        }
+    }
     hashChange();
     $(".btn").on('click', function() {
         $(this).toggleClass('active');
@@ -18,18 +35,29 @@ $(function(){
     $(".github-link").click(function(){
         window.open("https://github.com/leszekkorzan", '_blank');
     })
-    $(".showskills").click(function(){
-        showPage(currentPage, 'skills')
-        currentPage = "skills";
-    })
-    $(".showprojects").click(function(){
-        showPage(currentPage, 'projects')
-        currentPage = "projects";
-    })
-    $(".showcontact").click(function(){
-        showPage(currentPage, 'contact')
-        currentPage = "contact";
-    })
+    const pages = [
+        {
+            domEl: '.showskills',
+            link: 'skills'
+        },
+        {
+            domEl: '.showprojects',
+            link: 'projects'
+        },
+        {
+            domEl: '.showcontact',
+            link: 'contact'
+        }
+    ]
+    pages.map(
+        (page) => {
+            const { domEl, link } = page
+            $(domEl).click( () => {
+                showPage(currentPage, link)
+                currentPage = link
+            } )
+        }
+    )
     $(".menu-title a").click(function(){
         showPage(currentPage, 'home');
         if($(window).width() < 1100){
@@ -45,7 +73,7 @@ $(function(){
         if(cPage == null){
             cPage = "home";
         }
-        if(cPage == toPage){
+        if(cPage === toPage){
             return;
         }
         if(cPage == "home"){
@@ -68,27 +96,4 @@ $(function(){
     $( window ).on( 'hashchange', function( e ) {
         hashChange();
     } );
-    function hashChange(){
-        var hash = location.hash;
-        if(hash === "#skills"){
-            showPage(currentPage, 'skills')
-            currentPage = "skills";
-        }else if(hash === "#projects"){
-            showPage(currentPage, 'projects')
-            currentPage = "projects";
-        }else if(hash === "#contact"){
-            showPage(currentPage, 'contact')
-            currentPage = "contact";
-        }else if(hash === ""){
-            showPage(currentPage, 'home');
-            if($(window).width() < 1100){
-                $(".animated-border-mobile").fadeIn();
-                $(".abm2").fadeIn('fast');
-                $(".menu-title a").css('color', "#fff");
-            }else{
-                $(".animated-border").fadeIn('slow');
-            }
-            currentPage = "home";
-        }
-    }
 })
