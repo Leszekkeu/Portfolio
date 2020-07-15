@@ -137,7 +137,6 @@ span {
     transition: all .3s;
     position: relative;
 }
-  
 span + span {
     margin-top: 14px;
 }
@@ -395,7 +394,7 @@ span + span {
     background-image: linear-gradient(147deg, #FFE53B, #FF2525 90%);   
     padding-bottom: 25px;
 }
-.projects-box{
+.boxes{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -425,7 +424,7 @@ span + span {
     border-radius: 10px;
 }
 @media only screen and (max-width:1050px){
-    .projects-box{
+    .boxes{
         justify-content: center;
     }
 }

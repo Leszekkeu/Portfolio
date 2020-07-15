@@ -15,6 +15,21 @@ $(function(){
             } else {
                 $(".animated-border").fadeIn('slow');
             }
+            gsap.from('.homeElm', {
+                delay: 0.1,
+                duration: 1,
+                opacity: 0,
+                y: 80,
+                stagger: 0.5,
+            });
+            gsap.to('.nameTitle', {
+                delay: 2.2,
+                duration: 0.5,
+                css: {
+                    color: '#ff4028'
+                },
+                
+            });
         }
     }
     hashChange();
@@ -91,9 +106,38 @@ $(function(){
             $(`.${cPage}`).removeClass('pthide');
             $(`.${toPage}`).removeClass('ptshow');
         }, 700);
+        if(toPage === 'skills'){
+            gsap.from('.skill', {
+                y: 60,
+                duration: 1.5,
+                scale: 0.9, 
+                opacity: 0, 
+                delay: 0.5, 
+                stagger: 0.1,
+                ease: 'elastic', 
+            });
+        }else if(toPage === 'projects'){
+            gsap.from('.projects-box a', {
+                y: 50,
+                duration: 1.5,
+                opacity: 0, 
+                delay: 0.5, 
+                stagger: 0.2,
+                ease: 'power3'
+            });
+        }else if(toPage === 'contact'){
+            gsap.from('.contact-box a', {
+                y: 50,
+                duration: 1.5,
+                opacity: 0, 
+                delay: 0.5, 
+                stagger: 0.2,
+                ease: 'power3'
+            });
+        }
     
     }
-    $( window ).on( 'hashchange', function( e ) {
+    $(window).on( 'hashchange', function( e ) {
         hashChange();
     } );
 })
