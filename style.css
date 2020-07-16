@@ -341,6 +341,9 @@ span + span {
     .menu-title a{
         color: #fff;
     }
+    .copyright{
+        color: #fff
+    }
 }
 .abm2in{
     border-radius: 100% 0% 0% 100% / 100% 0% 100% 0%;
@@ -478,4 +481,9 @@ span + span {
     position: relative;
     top: 7px;
     margin-right: 5px;
+}
+.copyright{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
