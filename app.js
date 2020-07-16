@@ -29,7 +29,7 @@ $(function(){
                     color: '#ff4028'
                 },
             });
-            gsap.fromTo('.copyright', {opacity: 0}, {opacity: 1, duration: 1, delay: 0.5})
+            gsap.fromTo('.copyright', {opacity: 0}, {opacity: 1, duration: 1, delay: 1})
         }
     }
     hashChange();
