@@ -28,8 +28,8 @@ $(function(){
                 css: {
                     color: '#ff4028'
                 },
-                
             });
+            gsap.fromTo('.copyright', {opacity: 0}, {opacity: 1, duration: 1, delay: 0.5})
         }
     }
     hashChange();
@@ -92,6 +92,7 @@ $(function(){
             return;
         }
         if(cPage == "home"){
+            $(".copyright").css('opacity', 0)
             $(".animated-border-mobile").fadeOut();
             $(".abm2").fadeOut('fast');
             $(".animated-border").fadeOut('fast');
