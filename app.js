@@ -36,13 +36,13 @@ $(function(){
     $(".btn").on('click', function() {
         $(this).toggleClass('active');
         $(this).toggleClass('not-active');
-        $(".menu-nav").slideToggle();
-        $(".cnt").delay(300).fadeToggle();
+        $(".cnt").fadeToggle();
+        $(".menu-nav").delay(100).slideToggle();
     });
     $(".menu-el a").click(function(){
         if($(".btn").hasClass("active")){
-            $(".cnt").show();
             $(".menu-nav").slideUp();
+            $(".cnt").show();
             $(".btn").toggleClass('active');
             $(".btn").toggleClass('not-active'); 
         }
@@ -52,16 +52,20 @@ $(function(){
     })
     const pages = [
         {
-            domEl: '.showskills',
+            domEl: '.showSkills',
             link: 'skills'
         },
         {
-            domEl: '.showprojects',
+            domEl: '.showProjects',
             link: 'projects'
         },
         {
-            domEl: '.showcontact',
+            domEl: '.showContact',
             link: 'contact'
+        },
+        {
+            domEl: '.showEnterprise',
+            link: 'enterprise'
         }
     ]
     pages.map(
@@ -103,7 +107,7 @@ $(function(){
 
         $(`.${toPage}`).delay(400).addClass('ptshow');
         $(`.${toPage}`).fadeIn('fast');
-        setTimeout(function() {
+        setTimeout(() => {
             $(`.${cPage}`).removeClass('pthide');
             $(`.${toPage}`).removeClass('ptshow');
         }, 700);
@@ -135,10 +139,26 @@ $(function(){
                 stagger: 0.2,
                 ease: 'power3'
             });
+        }else if(toPage === 'enterprise'){
+            gsap.from('.enterpriseElm', {
+                delay: 0.1,
+                duration: 1,
+                opacity: 0,
+                y: 80,
+                stagger: 0.5,
+            });
+            gsap.from('.enterprise-box a', {
+                y: 50,
+                duration: 1.5,
+                opacity: 0, 
+                delay: 1.5, 
+                stagger: 0.2,
+                ease: 'power3'
+            });
         }
     
     }
-    $(window).on( 'hashchange', function( e ) {
+    $(window).on( 'hashchange', () => {
         hashChange();
-    } );
+    });
 })
